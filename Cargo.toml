@@ -1,22 +1,25 @@
 [package]
+edition = "2021"
 name = "anime-cli"
 version = "0.1.0"
-edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = {version = "4.0", features = ["derive"]}
 env_logger = "0.10.1"
+error-chain = "0.12.4"
 log = "0.4.20"
-clap = { version = "4.0", features = ["derive"] }
+reqwest = {version = "0.11.22", features = ["blocking"]}
+scraper = "0.18.1"
+xml-rs = "0.8.19"
 
 [dev-dependencies]
-
 
 [package.metadata.scripts]
 dev = "RUST_LOG=debug cargo run"
 dev_int = "RUST_LOG=debug cargo run 1"
-dev_rel = "RUST_LOG=debug cargo run 2"
 dev_new = "RUST_LOG=debug cargo run 3"
 dev_pop = "RUST_LOG=debug cargo run 4"
+dev_rel = "RUST_LOG=debug cargo run 2"
 dev_wall = "RUST_LOG=debug cargo run 5"
